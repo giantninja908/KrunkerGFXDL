@@ -1,12 +1,11 @@
-# Tauri Svelte App Template
+# Krunker GFXDL
 
-This is a project template for [Tauri](https://tauri.studio) and [Svelte](https://svelte.dev) apps. It lives at https://github.com/jbarszczewski/tauri-svelte-template.
+this is a utility for krunker users to do the stuffz
 
-To create a new project based on this template follow the official guide here: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template
 
 ## Get started
 
-Before using template please see [Tauri Introduction](https://tauri.studio/en/docs/getting-started/intro) and follow instructions to setup your environment.
+Before using KGFXDL please see [Tauri Introduction](https://tauri.studio/en/docs/getting-started/intro) and follow instructions to setup your environment.
 
 Install the dependencies...
 
@@ -36,4 +35,3 @@ This will create standalone app and installer in `src-tauri/target/release` dire
 
 -   [Tauri](https://tauri.studio)
 -   [Svelte](https://svelte.dev)
--   [Sveltestrap](https://sveltestrap.js.org)
