@@ -1,0 +1,6 @@
+/node_modules/
+/public/build/
+/src-tauri/target/
+
+.DS_Store
+.vscode
