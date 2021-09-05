@@ -104,6 +104,9 @@
     .then((e) => e.json())
     .then((e) => {
       weapons = e.map((elem) => {
+        if(elem.hasOwnProperty("midT") && !elem.hasOwnProperty("mid")){
+          elem["mid"] = 0;
+        }
         let preview = getPrev(elem);
         let urls = {};
 
