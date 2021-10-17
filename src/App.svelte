@@ -54,6 +54,7 @@
     "melee/melee_",
     "sprays/",
     "dyes/",
+    "faces/face_",
   ];
   const getPrev = (a) => {
     return (
