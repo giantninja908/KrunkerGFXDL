@@ -105,7 +105,7 @@
     .then((e) => e.json())
     .then((e) => {
       weapons = e.map((elem) => {
-        if(elem.hasOwnProperty("midT") && !elem.hasOwnProperty("mid")){
+        if (elem.hasOwnProperty("midT") && !elem.hasOwnProperty("mid")) {
           elem["mid"] = 0;
         }
         let preview = getPrev(elem);
@@ -116,6 +116,11 @@
             urls[
               "texture"
             ] = `https://assets.krunker.io/textures/weapons/pat/${elem.pat}.png`;
+            if (elem.glow) {
+              urls[
+                "emissive"
+              ] = `https://assets.krunker.io/textures/weapons/pat/${elem.pat}_e.png`;
+            }
           } else if (elem.hasOwnProperty("mid")) {
             urls[
               "texture"
@@ -124,15 +129,34 @@
             }${
               elem.hasOwnProperty("midT") ? "_" + elem.midT : "_" + elem.mid
             }.png`;
+            if (elem.glow) {
+              urls[
+                "emissive"
+              ] = `https://assets.krunker.io/textures/weapons/weapon_${
+                elem.weapon
+              }${
+                elem.hasOwnProperty("midT") ? "_" + elem.midT : "_" + elem.mid
+              }_e.png`;
+            }
           } else {
             urls[
               "texture"
             ] = `https://assets.krunker.io/textures/weapons/skins/weapon_${elem.weapon}_${elem.id}.png`;
+            if (elem.glow) {
+              urls[
+                "emissive"
+              ] = `https://assets.krunker.io/textures/weapons/skins/weapon_${elem.weapon}_${elem.id}_e.png`;
+            }
           }
           urls["model"] = `https://assets.krunker.io/models/weapons/weapon_${
             elem.weapon
           }${elem.hasOwnProperty("mid") ? "_" + elem.mid : ""}.obj`;
         } else {
+          if (elem.glow) {
+            urls["emissive"] = `https://assets.krunker.io/textures/${
+              types[elem.type]
+            }${elem.id}${elem.tex !== undefined ? "_" + elem.tex : ""}_e.png`;
+          }
           urls["texture"] = `https://assets.krunker.io/textures/${
             types[elem.type]
           }${elem.id}${elem.tex !== undefined ? "_" + elem.tex : ""}.png`;
