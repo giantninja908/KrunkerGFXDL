@@ -47,16 +47,7 @@
   };
 
   let weapons = [];
-  const types = [
-    "weapons/weapon_",
-    "hats/hat_",
-    "body/body_",
-    "melee/melee_",
-    "sprays/",
-    "dyes/",
-    "faces/face_",
-  ];
-  const getPrev = (a) => {
+  const types = ['weapons/weapon_','hats/hat_','body/body_','melee/melee_','sprays/','dyes/','waist/waist_','faces/face_','shoes/shoe_','pets/pet_','collectibles/collect_','wrist/wrist_'];  const getPrev = (a) => {
     return (
       "https://assets.krunker.io/textures/" +
       (a["type"] && 0x4 == a["type"] && !a["is3D"]
@@ -150,7 +141,7 @@
           }
           urls["model"] = `https://assets.krunker.io/models/weapons/weapon_${
             elem.weapon
-          }${elem.hasOwnProperty("mid") ? "_" + elem.mid : ""}.obj`;
+          }${elem.hasOwnProperty("mid") ? "_" + elem.mid : ""}.${elem.hasOwnProperty("hasAnim") ? "gltf" : "obj"}`;
         } else {
           if (elem.glow) {
             urls["emissive"] = `https://assets.krunker.io/textures/${
@@ -163,7 +154,7 @@
           if (![4, 5].includes(elem.type)) {
             urls["model"] = `https://assets.krunker.io/models/${
               types[elem.type]
-            }${elem.id}.obj`;
+            }${elem.id}.${elem.hasOwnProperty("hasAnim") ? "gltf" : "obj"}`;
           }
         }
 
